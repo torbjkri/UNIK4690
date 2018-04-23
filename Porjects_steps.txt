@@ -1,0 +1,8 @@
+- Calibrate camera
+
+- Recognize target image on wall
+- Estimate homography from target image
+
+- Project picture onto wall
+
+- 
