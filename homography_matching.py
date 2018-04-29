@@ -8,13 +8,13 @@ Created on Sun Apr 22 20:55:46 2018
 import numpy as np
 import cv2
 import camera as cm
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 
 MIN_MATCH_COUNT = 20
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
-img1 = cv2.imread('QR_real.png.',0)
+img1 = cv2.imread('QR_real.png',0)
 #screenshot = cm.screenshot(cap)
 
 #img2 = cv2.cvtColor(screenshot, cv2.COLOR_BGR2GRAY)
@@ -40,7 +40,8 @@ true = 0
 while(1):
     
     ret, frame = cap.read()
-    
+    cv2.imshow('name', frame)
+
     print(ret)
     
     if ret:
@@ -69,7 +70,8 @@ while(1):
             img2 = cv2.polylines(img2,[np.int32(dst)], True,255,3,cv2.LINE_AA)
             img3 = cv2.drawMatches(img1,kp1,img2,kp2,good[::10],None,**draw_params)
         
-            
+            true = 1
+
         else:
             print('NOt enough matches found - %d/%d',(len(good), MIN_MATCH_COUNT))
             matchesMask = None
@@ -79,8 +81,7 @@ while(1):
                            matchesMask = matchesMask,
                            flags = 2)
         
-        true = 1
-        
+
     if true == 1:
         cv2.imshow('result',img3)
         
