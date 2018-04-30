@@ -28,13 +28,13 @@ MIN_MATCH_COUNT = 20
 
 cap = cv2.VideoCapture(0)
 
-img1 = cv2.imread('QR_real.png.',0)
+img1 = cv2.imread('Figures/QR_real.png.',0)
 
 screenshot = cm.screenshot(cap)
 
 img2 = cv2.cvtColor(screenshot, cv2.COLOR_BGR2GRAY)
 
-img4 = cv2.imread('banksy.jpg',0)
+img4 = cv2.imread('Figures/banksy.jpg',0)
 #screenshot = cm.screenshot(cap)
 
 #img2 = cv2.cvtColor(screenshot, cv2.COLOR_BGR2GRAY)
