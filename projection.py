@@ -5,28 +5,25 @@ def projectImage(img1, img2, homography, thresh = 10, maxval = 255):
 
     w2, h2 = img1.shape
     img2_warped = cv2.warpPerspective(img2, homography, dsize=(h2, w2))
-
+    #cv2.imshow('before',img2)
+    #cv2.imshow('after',img2_warped)
+    #cv2.waitKey(0)
     ret, mask = cv2.threshold(img2_warped, thresh, maxval, cv2.THRESH_BINARY)
-
     inv = cv2.bitwise_not(mask)
-    a = inv.shape
-    b = mask.shape
-    c = img1.shape
-    d = img2.shape
-    print(a,b,c,d)
     img1_bg = cv2.bitwise_and(img1, inv)
     img2_fg = cv2.bitwise_and(img2_warped, mask)
 
-    img_12 = cv2.add(img1_bg, img2_fg)
-
-    return 
+    return cv2.add(img1_bg, img2_fg)
 
 
-import numpy as np
+# Find good matches between images, and return them
+def findGoodMatches(des1, des2):
+    # FLANN: Fast Library for Approximate Nearest Neighbour
+    FLANN_INDEX_KDTREE = 0
+    index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)
+    search_params = dict(checks=50)
+    matchDetector = cv2.FlannBasedMatcher(index_params, search_params)
 
-
-## Find good matches between images, and return them
-def findGoodMatches(des1, des2, matchDetector):
     matches = matchDetector.knnMatch(des1, des2, k = 2)
     goodMatches = []
     
