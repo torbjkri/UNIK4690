@@ -15,6 +15,7 @@ Created on Sun Apr 22 20:55:46 2018
 import numpy as np
 import cv2
 import camera as cm
+import projection as pr
 from matplotlib import pyplot as plt
 
 
@@ -26,9 +27,9 @@ def placeImage(event, x, y, flags, param):
 
 MIN_MATCH_COUNT = 20
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
-img1 = cv2.imread('Figures/QR_real.png.',0)
+img1 = cv2.imread('Figures/QR_real.png',0)
 
 screenshot = cm.screenshot(cap)
 
@@ -112,18 +113,8 @@ if len(good) > MIN_MATCH_COUNT:
                    matchesMask = matchesMask,
                    flags = 2)
 
-    w2, h2 = img2.shape
-    img5 = cv2.warpPerspective(img4, M, dsize = (h2,w2))
-    
-    ret, mask = cv2.threshold(img5,10,255, cv2.THRESH_BINARY)
-    
-    inv = cv2.bitwise_not(mask)
-    
-    img2_bg = cv2.bitwise_and(img2, inv)
-    img5_fg = cv2.bitwise_and(img5, mask)
-    
-    img2_bg = cv2.add(img2_bg,img5_fg)
-    
+
+    img2_bg = pr.projectImage(img2, img4, M)
     #img5_tot = cv2.bitwise_and(img2_bg, img5)
 #    img3 = cv2.drawMatches(img1,kp1,img2,kp2,good,None,**draw_params)
     
@@ -138,7 +129,6 @@ else:
 true = 1
 
 cap.release()
-cv2.imshow('banksy',img5)
 cv2.imshow('projected',img2_bg)
 #cv2.imshow('result',img3)
 
