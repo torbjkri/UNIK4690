@@ -1,7 +1,19 @@
 - Calibrate camera
 
-- Recognize target image on wall
-- Estimate homography from target image
+
+ step 1. QR code detection and projection
+- Detect QR code image on wall
+- Estimate homography from image
+- Project a new image on top of QR code
+-
+
+step 2.
+- Detect squares/picture frames on wall
+- Estimate homography from cornerpoints
+- Project a new image in frames
+
+step 3.
+-
 
 - Project picture onto wall
 
