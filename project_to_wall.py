@@ -52,12 +52,33 @@ elif homography_computation_method == 2:
 
     # Output dtype = cv2.CV_64F. Then take its absolute and convert to cv2.CV_8U
     # Canny edge detection
-    edges = cv2.Canny(target_scene, 100, 200)
-    cv2.imshow('Canny', edges)
+    edges = cv2.Canny(target_scene, 20, 200)
+
+    #edges = cv2.GaussianBlur(edges, (5,5), 1)
+    #edges = cv2.dilate(edges, np.ones((5,5), dtype = np.uint8))
+
+    lines = cv2.HoughLinesP(edges, rho=1, theta=1 * np.pi / 180, threshold=100, minLineLength=100, maxLineGap=50)
+    N = lines.shape[0]
+
+    for i in range(N):
+        x1 = lines[i][0][0]
+        y1 = lines[i][0][1]
+        x2 = lines[i][0][2]
+        y2 = lines[i][0][3]
+        cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 2)
+    cv2.imshow('result',img)
     cv2.waitKey(0)
+
+    for x in range(0, len(lines)):
+        for x1, y1, x2, y2 in lines[x]:
+            cv2.line(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
+
     image, contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    cnt = contours[4]
+    cv2.drawContours(img, [cnt], 0, (0, 255, 0), 3)
+    cv2.imshow('Contours', img)
+
     cnt = contours[1]
-    img = cv2.drawContours(edges, [cnt], 0, (0, 255, 0), 3)
 # 3. Show result
 #cv2.imshow('projected',scene_with_projection)
 #cv2.waitKey(0)
