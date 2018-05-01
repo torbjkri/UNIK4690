@@ -61,7 +61,7 @@ def cluster_points(points, nclusters):
     _, _, centers = cv2.kmeans(points, nclusters, None, criteria, 10, cv2.KMEANS_PP_CENTERS)
     return centers
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 while(1):
     ret, img = cap.read()
