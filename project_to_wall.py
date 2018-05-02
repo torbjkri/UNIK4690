@@ -23,7 +23,7 @@ homography_computation_method = 2
 
 # 1. Choose input_scene type (1 = Figures/Screenshot.jpg, 2 = take sceenshot)
 if input_scene == 1:
-    target_scene = cv2.imread('Figures/Screenshot.jpg', 0)
+    target_scene = cv2.imread('Figures/Screenshot2.jpg', 0)
 elif input_scene == 2:
     cap = cv2.VideoCapture(1)
     screenshot = cm.screenshot(cap)
@@ -49,94 +49,23 @@ if homography_computation_method == 1:
 
 elif homography_computation_method == 2:
     # 2.2 Detect squares in scene and compute homography
-    img = target_scene
+    img = target_scene.copy()
+    img2 = target_scene.copy()
 
     # Output dtype = cv2.CV_64F. Then take its absolute and convert to cv2.CV_8U
     # Canny edge detection
     edges = cv2.Canny(target_scene, 20, 200)
-
-    #edges = cv2.GaussianBlur(edges, (5,5), 1)
-    #edges = cv2.dilate(edges, np.ones((5,5), dtype = np.uint8))
-    while False:
-        lines = cv2.HoughLinesP(edges, rho=1, theta=1 * np.pi / 180, threshold=100, minLineLength=100, maxLineGap=50)
-        N = lines.shape[0]
-        groups = []
-        thetaDiff = 1
-        radiusDiff = 20
-        img2 = img.copy()
-
-        # separate lines in groups according to theta and radius
-
-        for i in range(N):
-            x1 = lines[i][0][0]
-            y1 = lines[i][0][1]
-            x2 = lines[i][0][2]
-            y2 = lines[i][0][3]
-            # compute theta and r
-            gradient = (y2-y1)/(x2-x1)
-            yatx0 = y1 - gradient * x1
-            parameter = 1 / abs(gradient)
-            theta = math.asin(parameter)
-            radius = math.sin(theta) * abs(yatx0)
-            if gradient > 0 and yatx0 > 0:
-                radius = -radius
-            theta = math.atan2(y2-y1,x2-x1)
-            radius = (y1 + gradient*x1)/(math.sqrt(gradient*gradient+1))
-            length = math.sqrt(pow(x1 - x2,2) + pow(y2 - y1,2))
-            img = cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 2)
-            print(x1,y1,x2,y2,theta, radius)
-            # Group similar theta and r values
-            new_group = True
-            if len(groups) != 0:
-                for j in range(len(groups)):
-                    for line in groups[j]:
-                        if abs(theta - line[0]) < thetaDiff and \
-                                abs(radius - line[1]) < radiusDiff:
-                            groups[j].append([theta,radius,length,lines[i]])
-                            new_group = False
-                            break
-                    if not new_group:
-                        break
-                if new_group:
-                    groups.append([[theta, radius, length, lines[i]]])
-            else:
-                groups.append([[theta,radius,length,lines[i]]])
-
-        # Get set of lines by connecting line fragments and separating individual lines
-        lines_in_image = []
-        i = 1
-        for group in groups:
-            # theta and radius should be weighted by line length
-            theta_average = 0
-            radius_average = 0
-            total_length = 0
-            for line in group:
-                theta_average = theta_average + (line[0]*line[2])
-                radius_average = radius_average + (line[1]*line[2])
-                total_length = total_length + line[2]
-            theta_average = theta_average/total_length
-            radius_average = radius_average/total_length
-
-            #print('averages =', theta_average, radius_average)
-            if abs(theta_average) > math.pi/4:
-                for line in group:
-                    dist_1 = (radius_average * math.sin(theta_average) - line[3][0][1])/math.cos(theta_average)
-                    dist_2 = (radius_average * math.sin(theta_average) - line[3][0][3])/math.cos(theta_average)
-                    xc = radius_average*math.cos(theta)
-                    yc = radius_average*math.sin(theta)
-                    #print(radius_average, theta_average, line[3][0][0], line[3][0][1], xc, yc)
-            else:
-                for line in group:
-                    dist_1 = (radius_average * math.cos(theta_average) - line[3][0][0])/math.sin(theta_average)
-                    dist_2 = (radius_average * math.cos(theta_average) - line[3][0][2])/math.sin(theta_average)
-            i=i+1
+    lines = cv2.HoughLinesP(edges, rho=1, theta=1 * np.pi / 180, threshold=100, minLineLength=100, maxLineGap=50)
+    for line in lines:
+        x1 = line[0][0]
+        y1 = line[0][1]
+        x2 = line[0][2]
+        y2 = line[0][3]
+        img = cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 2)
 
 
-        print('groups =',len(groups))
-        #cv2.imshow('result_filtered',img)
-        cv2.imshow('result_original',img)
-        cv2.waitKey(0)
 
+        print(x1,x2,y1,y2)
     #for x in range(0, len(lines)):
     #    for x1, y1, x2, y2 in lines[x]:
     #        cv2.line(img, (x1, y1), (x2, y2), (0, 255, 0), 2)

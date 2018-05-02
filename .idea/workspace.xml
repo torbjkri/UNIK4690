@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8a4f300-c7e6-451e-adc9-5f649760a4ba" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/find_lines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/find_shape.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_shape.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_to_wall.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_to_wall.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,17 +16,52 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/UNIK4690$main.coverage" NAME="main Coverage Results" MODIFIED="1525018482895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/UNIK4690$homography_matching.coverage" NAME="homography_matching Coverage Results" MODIFIED="1525012327867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/UNIK4690$project_to_wall.coverage" NAME="project_to_wall Coverage Results" MODIFIED="1525189907253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/UNIK4690$find_lines.coverage" NAME="find_lines Coverage Results" MODIFIED="1525284024991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/UNIK4690$project_to_wall.coverage" NAME="project_to_wall Coverage Results" MODIFIED="1525262824323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="project_to_wall.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="project_to_wall.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project_to_wall.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
+            <state relative-caret-position="-188">
+              <caret line="58" selection-start-line="58" selection-end-line="63" selection-end-column="63" />
               <folding>
                 <element signature="e#85#103#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="find_lines.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/find_lines.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#164#802#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_pydev_execfile.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="find_lines_backup.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/find_lines_backup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="652">
+              <caret line="144" column="16" selection-start-line="144" selection-start-column="16" selection-end-line="144" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -36,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/find_shape.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="261">
-              <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
               <folding>
                 <element signature="e#85#95#0" expanded="true" />
               </folding>
@@ -47,7 +82,7 @@
       <file leaf-file-name="projection.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
+            <state relative-caret-position="580">
               <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="70" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -84,6 +119,8 @@
         <option value="$PROJECT_DIR$/projection.py" />
         <option value="$PROJECT_DIR$/find_shape.py" />
         <option value="$PROJECT_DIR$/project_to_wall.py" />
+        <option value="$PROJECT_DIR$/find_lines_backup.py" />
+        <option value="$PROJECT_DIR$/find_lines.py" />
       </list>
     </option>
   </component>
@@ -115,6 +152,11 @@
               <item name="UNIK4690" type="b2602c69:ProjectViewProjectNode" />
               <item name="UNIK4690" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="UNIK4690" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UNIK4690" type="462c0819:PsiDirectoryNode" />
+              <item name="Figures" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -139,7 +181,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.project_to_wall">
+  <component name="RunManager" selected="Python.find_lines">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="UNIK4690" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -154,6 +196,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="find_lines" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="UNIK4690" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/find_lines.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -240,9 +301,11 @@
       <item itemvalue="Python.main" />
       <item itemvalue="Python.project_to_wall" />
       <item itemvalue="Python.find_shape" />
+      <item itemvalue="Python.find_lines" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.find_lines" />
         <item itemvalue="Python.project_to_wall" />
         <item itemvalue="Python.find_shape" />
         <item itemvalue="Python.main" />
@@ -303,29 +366,35 @@
       <option name="project" value="LOCAL" />
       <updated>1525167787407</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="minor changes">
+      <created>1525189965881</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525189965881</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="130" y="-8" width="2430" height="1448" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021349" side_tool="true" weight="0.32885906" />
       <window_info anchor="right" x="0" y="0" width="558" height="1228" id="Documentation" order="5" side_tool="true" weight="0.3292058" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49871904" weight="0.32885906" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32885906" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49786508" weight="0.32885906" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.30956376" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49786508" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329698" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2886422" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29888985" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="4" weight="0.3296328" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" weight="0.329698" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" weight="0.329698" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49786508" weight="0.39932886" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49786508" weight="0.41862416" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -376,14 +445,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/project_to_wall.py</url>
-          <line>148</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/project_to_wall.py</url>
-          <line>136</line>
-          <option name="timeStamp" value="44" />
+          <url>file://$PROJECT_DIR$/find_lines.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -393,10 +457,70 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="49" />
+      <option name="time" value="56" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/project_to_wall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4437">
+          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+          <folding>
+            <element signature="e#85#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/find_shape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="e#85#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_to_wall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2117">
+          <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
+          <folding>
+            <element signature="e#85#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/find_shape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="e#85#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project_to_wall.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1885">
@@ -484,22 +608,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hough_line_intersections.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/find_shape.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding>
-            <element signature="e#85#95#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
+        <state relative-caret-position="580">
           <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="70" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -507,12 +618,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Figures/Screenshot2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/find_shape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="e#85#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project_to_wall.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
+        <state relative-caret-position="-188">
+          <caret line="58" selection-start-line="58" selection-end-line="63" selection-end-column="63" />
           <folding>
             <element signature="e#85#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/find_lines_backup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="144" column="16" selection-start-line="144" selection-start-column="16" selection-end-line="144" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/find_lines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#164#802#0" />
           </folding>
         </state>
       </provider>
