@@ -9,6 +9,7 @@ import numpy as np
 import cv2
 import camera as cm
 import projection as pr
+import math
 from matplotlib import pyplot as plt
 
 
@@ -22,7 +23,7 @@ homography_computation_method = 2
 
 # 1. Choose input_scene type (1 = Figures/Screenshot.jpg, 2 = take sceenshot)
 if input_scene == 1:
-    target_scene = cv2.imread('Figures/Screenshot.jpg', 0)
+    target_scene = cv2.imread('Figures/Screenshot2.jpg', 0)
 elif input_scene == 2:
     cap = cv2.VideoCapture(1)
     screenshot = cm.screenshot(cap)
@@ -48,37 +49,33 @@ if homography_computation_method == 1:
 
 elif homography_computation_method == 2:
     # 2.2 Detect squares in scene and compute homography
-    img = target_scene
+    img = target_scene.copy()
+    img2 = target_scene.copy()
 
     # Output dtype = cv2.CV_64F. Then take its absolute and convert to cv2.CV_8U
     # Canny edge detection
     edges = cv2.Canny(target_scene, 20, 200)
-
-    #edges = cv2.GaussianBlur(edges, (5,5), 1)
-    #edges = cv2.dilate(edges, np.ones((5,5), dtype = np.uint8))
-
     lines = cv2.HoughLinesP(edges, rho=1, theta=1 * np.pi / 180, threshold=100, minLineLength=100, maxLineGap=50)
-    N = lines.shape[0]
+    for line in lines:
+        x1 = line[0][0]
+        y1 = line[0][1]
+        x2 = line[0][2]
+        y2 = line[0][3]
+        img = cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 2)
 
-    for i in range(N):
-        x1 = lines[i][0][0]
-        y1 = lines[i][0][1]
-        x2 = lines[i][0][2]
-        y2 = lines[i][0][3]
-        cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 2)
-    cv2.imshow('result',img)
-    cv2.waitKey(0)
 
-    for x in range(0, len(lines)):
-        for x1, y1, x2, y2 in lines[x]:
-            cv2.line(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
-    image, contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    cnt = contours[4]
-    cv2.drawContours(img, [cnt], 0, (0, 255, 0), 3)
-    cv2.imshow('Contours', img)
+        print(x1,x2,y1,y2)
+    #for x in range(0, len(lines)):
+    #    for x1, y1, x2, y2 in lines[x]:
+    #        cv2.line(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
-    cnt = contours[1]
+    #image, contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    #cnt = contours[4]
+    #cv2.drawContours(img, [cnt], 0, (0, 255, 0), 3)
+    #cv2.imshow('Contours', img)
+
+    #cnt = contours[1]
 # 3. Show result
 #cv2.imshow('projected',scene_with_projection)
 #cv2.waitKey(0)
