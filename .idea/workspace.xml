@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8a4f300-c7e6-451e-adc9-5f649760a4ba" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Figures/Screenshot2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Figures/Screenshot3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Figures/Screenshot4.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/find_lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_lines.py" afterDir="false" />
     </list>
@@ -18,7 +15,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/UNIK4690$main.coverage" NAME="main Coverage Results" MODIFIED="1525018482895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/UNIK4690$homography_matching.coverage" NAME="homography_matching Coverage Results" MODIFIED="1525012327867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/UNIK4690$find_lines.coverage" NAME="find_lines Coverage Results" MODIFIED="1525284024991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/UNIK4690$find_lines.coverage" NAME="find_lines Coverage Results" MODIFIED="1525443224494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/UNIK4690$project_to_wall.coverage" NAME="project_to_wall Coverage Results" MODIFIED="1525262824323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
@@ -26,40 +23,20 @@
       <file leaf-file-name="find_lines.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/find_lines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-87">
-              <caret line="139" column="46" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="46" />
+            <state relative-caret-position="304">
+              <caret line="189" column="55" selection-start-line="189" selection-start-column="55" selection-end-line="189" selection-end-column="55" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#102#855#0" />
-                <element signature="e#1046#2422#0" />
-                <element signature="e#2442#2822#0" />
-                <element signature="e#2980#3258#0" />
-                <element signature="e#3372#3717#0" />
-                <element signature="e#3460#3520#0" />
-                <element signature="e#3566#3746#0" />
-                <element signature="e#4150#4534#0" />
+                <element signature="e#145#898#0" />
+                <element signature="e#1046#2428#0" />
+                <element signature="e#2558#2971#0" />
+                <element signature="e#3004#3316#0" />
+                <element signature="e#3425#3770#0" />
+                <element signature="e#3817#3885#0" />
+                <element signature="e#3968#4148#0" />
+                <element signature="e#4249#4589#0" />
+                <element signature="e#4695#5730#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="find_shape.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/find_shape.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="120" selection-start-line="120" selection-end-line="127" selection-end-column="4" />
-              <folding>
-                <element signature="e#85#95#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hough_line_intersections.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hough_line_intersections.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-855">
-              <caret line="42" selection-start-line="42" selection-end-line="52" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -107,10 +84,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="645" />
-    <option name="y" value="188" />
-    <option name="width" value="1400" />
-    <option name="height" value="1056" />
+    <option name="x" value="819" />
+    <option name="y" value="443" />
+    <option name="width" value="1398" />
+    <option name="height" value="1076" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -353,48 +330,63 @@
       <option name="project" value="LOCAL" />
       <updated>1525287713095</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="find_lines">
+      <created>1525340984618</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1525340984618</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="129" y="13" width="2432" height="1428" extended-state="6" />
+    <frame x="130" y="-8" width="2430" height="1448" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021349" side_tool="true" weight="0.32885906" />
-      <window_info anchor="right" x="0" y="0" width="558" height="1228" id="Documentation" order="5" side_tool="true" weight="0.3292058" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50426984" side_tool="true" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49871904" weight="0.32885906" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.30956376" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49786508" visible="true" weight="0.32885906" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49573013" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329698" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30444065" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.30999145" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329698" />
       <window_info anchor="right" id="SciView" order="4" weight="0.3296328" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49786508" weight="0.41862416" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49615714" weight="0.41862416" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="558" height="1228" id="Documentation" order="5" side_tool="true" weight="0.3292058" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.329698" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" weight="0.329698" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30444065" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49871904" weight="0.32885906" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="4" weight="0.3296328" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30444065" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49786508" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49871904" weight="0.32885906" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49786508" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.329698" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.30956376" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49786508" weight="0.41862416" />
@@ -402,10 +394,11 @@
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.329698" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5021349" side_tool="true" weight="0.32885906" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.329698" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.3296328" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.329698" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -449,6 +442,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/find_lines.py</url>
+          <line>226</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -456,17 +456,52 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="56" />
+      <option name="time" value="72" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/find_lines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4814">
+          <caret line="166" column="43" selection-start-line="166" selection-start-column="43" selection-end-line="166" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#145#898#0" />
+            <element signature="e#1046#2428#0" />
+            <element signature="e#2558#2971#0" />
+            <element signature="e#3004#3316#0" />
+            <element signature="e#3425#3770#0" />
+            <element signature="e#3817#3885#0" />
+            <element signature="e#3968#4148#0" />
+            <element signature="e#4249#4589#0" />
+            <element signature="e#4695#5730#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/find_lines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4176">
+          <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#145#898#0" />
+            <element signature="e#1046#2428#0" />
+            <element signature="e#2558#2971#0" />
+            <element signature="e#3004#3316#0" />
+            <element signature="e#3425#3770#0" />
+            <element signature="e#3817#3885#0" />
+            <element signature="e#3968#4148#0" />
+            <element signature="e#4249#4589#0" />
+            <element signature="e#4695#5730#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project_to_wall.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1537">
           <caret line="58" selection-start-line="58" selection-end-line="63" selection-end-column="63" />
-          <folding>
-            <element signature="e#85#103#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -474,9 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding>
-            <element signature="e#85#95#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -484,9 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
           <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -496,14 +525,15 @@
           <caret line="111" column="18" lean-forward="true" selection-start-line="111" selection-start-column="18" selection-end-line="111" selection-end-column="18" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#102#855#0" />
-            <element signature="e#1046#2422#0" />
-            <element signature="e#2442#2822#0" />
-            <element signature="e#2980#3258#0" />
-            <element signature="e#3372#3717#0" />
-            <element signature="e#3460#3520#0" />
-            <element signature="e#3566#3746#0" />
-            <element signature="e#4150#4534#0" />
+            <element signature="e#145#898#0" />
+            <element signature="e#1046#2428#0" />
+            <element signature="e#2558#2971#0" />
+            <element signature="e#3004#3316#0" />
+            <element signature="e#3425#3770#0" />
+            <element signature="e#3817#3885#0" />
+            <element signature="e#3968#4148#0" />
+            <element signature="e#4249#4589#0" />
+            <element signature="e#4695#5730#0" />
           </folding>
         </state>
       </provider>
@@ -512,9 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4437">
           <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
-          <folding>
-            <element signature="e#85#103#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -522,9 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding>
-            <element signature="e#85#95#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -532,9 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
           <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -542,9 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2117">
           <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
-          <folding>
-            <element signature="e#85#103#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -552,9 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding>
-            <element signature="e#85#95#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -562,9 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
           <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -572,9 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1885">
           <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#85#103#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,9 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
           <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,37 +665,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1537">
           <caret line="58" selection-start-line="58" selection-end-line="63" selection-end-column="63" />
-          <folding>
-            <element signature="e#85#103#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/find_lines_backup.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/find_shape.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="120" selection-start-line="120" selection-end-line="127" selection-end-column="4" />
-          <folding>
-            <element signature="e#85#95#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1987">
+          <caret line="135" column="10" lean-forward="true" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -700,20 +690,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/find_lines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="139" column="46" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="46" />
+        <state relative-caret-position="304">
+          <caret line="189" column="55" selection-start-line="189" selection-start-column="55" selection-end-line="189" selection-end-column="55" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#102#855#0" />
-            <element signature="e#1046#2422#0" />
-            <element signature="e#2442#2822#0" />
-            <element signature="e#2980#3258#0" />
-            <element signature="e#3372#3717#0" />
-            <element signature="e#3460#3520#0" />
-            <element signature="e#3566#3746#0" />
-            <element signature="e#4150#4534#0" />
+            <element signature="e#145#898#0" />
+            <element signature="e#1046#2428#0" />
+            <element signature="e#2558#2971#0" />
+            <element signature="e#3004#3316#0" />
+            <element signature="e#3425#3770#0" />
+            <element signature="e#3817#3885#0" />
+            <element signature="e#3968#4148#0" />
+            <element signature="e#4249#4589#0" />
+            <element signature="e#4695#5730#0" />
           </folding>
         </state>
       </provider>
