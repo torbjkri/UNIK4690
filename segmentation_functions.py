@@ -39,7 +39,7 @@ def groupLineSegments(lines, thresholdTheta,thresholdRadius):
                 theta_SG = np.mean(lineSegmentGroups[i],axis = 0)[1]
 
                 if abs(abs(radius) - abs(radius_SG)) < thresholdRadius and abs(theta - theta_SG) < thresholdTheta:
-                    print('PINIS')
+
                     lineSegmentGroups[i] = np.vstack((lineSegmentGroups[i], np.array([radius, theta,x1,y1,x2,y2])))       #.append([x1,y1,x2,y2])
                     addNewLine = False
                     break
