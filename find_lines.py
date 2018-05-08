@@ -72,7 +72,7 @@ def groupLineSegments(lines, thresholdTheta,thresholdRadius):
             lineSegmentGroups.append([radius, theta, [[x1, y1, x2, y2]]])
     return lineSegmentGroups
 # Return a list of filtered lines. Per line: [x1,y1,x2,y2,radius,theta]
-def findLines(lines, thresholdTheta = 4.0*math.pi/180.0, thresholdRadius = 10.0):
+def findLines(lines, thresholdTheta = 2.0*math.pi/180.0, thresholdRadius = 10.0):
     linesFiltered=[]
 
     # Group lines by theta and radius
@@ -84,7 +84,7 @@ def findLines(lines, thresholdTheta = 4.0*math.pi/180.0, thresholdRadius = 10.0)
         for line in newLines:
             line.append(group[0])
             line.append(group[1])
-            linesFiltered.append(line)
+            linesFiltered.append([line])
 
     return linesFiltered
 # Return list of [x, y] coordines of all intersecing lines
@@ -134,94 +134,77 @@ def extendLine(line, extendPixels = 500.0):
         y1 = y1 + dy
         y2 = y2 - dy
     return [x1,y1,x2,y2]
-# Return list [[[x1,y1],[x2,y2],[x3,y3],[x4,y5]], ...] of four cornerpoints
-def findContoursOld(lines):
-    cornerPoints =[]
-    N = len(lines)
-    for i in range(N):
-        line1 = lines[i][:4][0]
-        for j in (lineN for lineN in range(i+1,N) if lineN != i):
-            line2 = lines[j][:4][0]
-            if intersect(line1,line2):
-                p1 = findIntersection(line1,line2)
-                for k in (lineN for lineN in range(i+1,N) if lineN not in (i,j)):
-                    line3 = lines[k][:4][0]
-                    if intersect(line2, line3) and not intersect(line1, line3):
-                        p2 = findIntersection(line2, line3)
-                        for l in (lineN for lineN in range(i+1,N) if lineN not in (i,j,k)):
-                            line4 = lines[l][:4][0]
-                            if (intersect(line3, line4) and intersect(line1, line4)) and not intersect(line2, line4):
-                                p3 = findIntersection(line3,line4)
-                                p4 = findIntersection(line4,line1)
-                                cornerPoints.append([p1,p2,p3,p4])
-    return cornerPoints
-#def findContourCornerPoints():
+
+
 
 # Set target scene
-target_scene = cv2.imread('Figures/Screenshot.jpg', 0)
-#target_scene_original = target_scene.copy()
-#target_scene_update = target_scene.copy()
+target_scene = cv2.imread('Figures/camshothome2.jpg', 0)
+target_scene_update = target_scene.copy()
 
 # Filter image (Canny>Dilate>Erode>Canny)
-kernel = np.ones((10, 10), np.uint8)
-edges = cv2.Canny(target_scene, 20, 100)
-#cv2.imshow('Canny', edges)
-edges = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel)
-#cv2.imshow('Dilate+Erode', edges)
-edges = cv2.Canny(edges, 20, 100)
+kernel1 = np.ones((2, 2), np.uint8)
+kernel2 = np.ones((4, 4), np.uint8)
+kernel3 = np.ones((8, 8), np.uint8)
+
+cv2.imshow('Canny 2', target_scene)
+cv2.waitKey(0)
+
+th, edges = cv2.threshold(target_scene, 127, 255, cv2.THRESH_BINARY);
 cv2.imshow('Canny 2', edges)
+cv2.waitKey(0)
+
+#Skeleton
+blank_image = np.zeros(target_scene.shape, np.uint8)
+
+
+
+edges = cv2.Canny(edges, 50, 150)
+cv2.imshow('Canny 2', edges)
+cv2.waitKey(0)
+
+#edges = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel3)
+#cv2.imshow('Canny 2', edges)
 #cv2.waitKey(0)
+
+#edges = cv2.Canny(edges, 1, 2)
+#cv2.imshow('Canny 2', edges)
+#cv2.waitKey(0)
+
+edges = cv2.dilate(edges, kernel1)
+cv2.imshow('Canny 2', edges)
+cv2.waitKey(0)
+
+cv2.destroyAllWindows()
 
 # Get contours, filter small contour areas
 im2, contours, hierarchy = cv2.findContours(edges,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-contoursFiltered = sorted([x for x in contours if cv2.contourArea(x) > 4000], key=lambda x: cv2.contourArea(x), reverse=True)
+contoursFiltered = sorted([x for x in contours if cv2.contourArea(x) > 3500], key=lambda x: cv2.contourArea(x), reverse=True)
+print(len(contoursFiltered))
 
 # Per contour: Create Houghlines and compute intersection points
-i=1
-for cntr in contoursFiltered[:5]:
-    blank_image = np.zeros(target_scene.shape, np.uint8)
-    cv2.drawContours(blank_image, cntr, -1, 255, 10)
-    lines = cv2.HoughLinesP(blank_image, rho=1, theta=1 * np.pi / 180, threshold=50, minLineLength=30, maxLineGap=30)
-    filteredLines = findLines(lines)
-    intersections = findAllIntersections(filteredLines)
+for cnt in contoursFiltered:
+    # Compute 4-sides polygone. Try different Epsilon:
+    for e in range(1,20):
+        epsilon = 0.005 * e * cv2.arcLength(cnt, True)
+        approx = cv2.approxPolyDP(cnt, epsilon, True)
+        if len(approx) <= 8:
+            blank_image = np.zeros(target_scene.shape, np.uint8)
+            cv2.drawContours(blank_image, [approx], -1, 255, 5)
 
-    # Show image with contour and cornerpoints
-    target_scene_update = target_scene.copy()
-    for line in filteredLines:
-        x1,y1,x2,y2 = line[:4]
-        target_scene_update = cv2.line(target_scene_update, (x1, y1), (x2, y2), (255, 0, 0), 2)
-    for xy in intersections:
-        cv2.circle(target_scene_update, (int(xy[0]), int(xy[1])), radius=10, color=0, thickness=-1)
-    cv2.imshow(str(i),target_scene_update)
-    i=i+1
-
-cv2.waitKey(0)
-# Remove small areas and sort by area
-#cntsSorted = sorted([x for x in contours if cv2.contourArea(x) > 4000], key=lambda x: cv2.contourArea(x) )
-#cntsSorted = [x for x in cntsSorted if cv2.contourArea(x) > 4000]
-
-
-
-#print('len',len(contours),len(filteredLines))
-
-#blank_image = np.zeros(target_scene.shape, np.uint8)
-#for line in filteredLines:
-#    x1,y1,x2,y2 = line[:4]
-#    blank_image = cv2.line(blank_image, (x1, y1), (x2, y2), 255, 10)
-#im2, contours, hierarchy = cv2.findContours(blank_image,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-#contoursNew = [x for x in contours if len(x) <= 2000]
-#cv2.drawContours(target_scene_update, contoursNew, -1, 255, 3)
-
-#for line in filteredLines:
-#    x1,y1,x2,y2 = line[:4]
-#    target_scene_update = cv2.line(target_scene_update, (x1, y1), (x2, y2), (255, 0, 0), 2)
-
-#for line in lines:
-#    x1, y1, x2, y2 = line[0][:4]
-#    target_scene = cv2.line(target_scene, (x1, y1), (x2, y2), (255, 0, 0), 2)
+            blank_image = cv2.erode(blank_image, kernel2)
+            cv2.destroyAllWindows()
+            lines = cv2.HoughLinesP(blank_image, rho=1, theta=1 * np.pi / 180, threshold=50, minLineLength=50,maxLineGap=10000)
+            cv2.imshow(str(type(lines)) ,blank_image)
+            cv2.waitKey(0)
+            if lines is not None:
+                filteredLines = findLines(lines)
+                if 4 <= len(filteredLines) <= 800:
+                    for line in filteredLines:
+                        x1,y1,x2,y2 = line[0][:4]
+                        target_scene = cv2.line(target_scene, (x1, y1), (x2, y2), (255, 0, 0), 2)
+            break
 
 if True:
-    cv2.imshow('Canny edges',target_scene)
-    cv2.imshow('contours',blank_image)
-    cv2.imshow('result',target_scene_update)
+    cv2.imshow('Final squares',target_scene)
     cv2.waitKey(0)
+    cv2.destroyAllWindows()
