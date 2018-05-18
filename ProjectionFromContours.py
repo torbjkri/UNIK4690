@@ -15,6 +15,7 @@ import math
 import camera_parameters as cp
 import itertools
 
+
 # Return filtered grey image
 def filterImage(image, kernel1 = np.ones((3,3), np.uint8), kernel2 = (3,3)):
     image = cv2.GaussianBlur(image, kernel2, 3)
@@ -146,18 +147,18 @@ def projectImage(imageName = 'Figures/corridor.jpg', projectionName = 'Figures/b
             #cv2.destroyAllWindows()
     return scene_with_projection
 
-imageList = ['corridor',
-             'camshothome0',
-             'camshothome1',
-             'camshothome2',
-             'camshothome3',
-             'Screenshot',
-             'Screenshot2',
-             'Screenshot3',
-             ]
+#imageList = ['corridor',
+#             'camshothome0',
+#             'camshothome1',
+#             'camshothome2',
+#             'camshothome3',
+#             'Screenshot',
+#             'Screenshot2',
+#             'Screenshot3',
+#             ]
 
-for name in imageList:
-    image_result = projectImage('Figures/'+name+'.jpg')
-    cv2.imshow(name,image_result)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+#for name in imageList:
+#    image_result = projectImage('Figures/'+name+'.jpg')
+#    cv2.imshow(name,image_result)
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()
