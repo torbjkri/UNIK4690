@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8a4f300-c7e6-451e-adc9-5f649760a4ba" name="Default" comment="homography working">
+    <list default="true" id="f8a4f300-c7e6-451e-adc9-5f649760a4ba" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +34,8 @@
       <file leaf-file-name="wallFloorCeiling.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wallFloorCeiling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-668">
-              <caret line="488" column="64" selection-start-line="488" selection-start-column="64" selection-end-line="488" selection-end-column="64" />
+            <state relative-caret-position="174">
+              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
               <folding>
                 <element signature="e#142#243#0" />
                 <element signature="e#369#930#0" />
@@ -51,7 +51,6 @@
                 <element signature="e#19908#20746#0" />
                 <element signature="e#21077#22377#0" />
                 <element signature="e#22488#24118#0" />
-                <element signature="e#19529#21339#0" />
               </folding>
             </state>
           </provider>
@@ -511,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527150586424</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="QR_code included">
+      <created>1527180700422</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1527180700422</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -525,7 +531,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="130" y="-8" width="2430" height="1448" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.500427" side_tool="true" weight="0.30956376" />
@@ -614,7 +619,8 @@
     <MESSAGE value="minor changes" />
     <MESSAGE value="find_lines" />
     <MESSAGE value="homography working" />
-    <option name="LAST_COMMIT_MESSAGE" value="homography working" />
+    <MESSAGE value="QR_code included" />
+    <option name="LAST_COMMIT_MESSAGE" value="QR_code included" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -681,22 +687,22 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/wallFloorCeiling.py</url>
-          <line>39</line>
+          <line>43</line>
           <option name="timeStamp" value="250" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/wallFloorCeiling.py</url>
-          <line>36</line>
+          <line>40</line>
           <option name="timeStamp" value="255" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/wallFloorCeiling.py</url>
-          <line>520</line>
+          <line>524</line>
           <option name="timeStamp" value="282" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/wallFloorCeiling.py</url>
-          <line>554</line>
+          <line>558</line>
           <option name="timeStamp" value="283" />
         </line-breakpoint>
       </breakpoints>
@@ -881,8 +887,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wallFloorCeiling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-668">
-          <caret line="488" column="64" selection-start-line="488" selection-start-column="64" selection-end-line="488" selection-end-column="64" />
+        <state relative-caret-position="174">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
           <folding>
             <element signature="e#142#243#0" />
             <element signature="e#369#930#0" />
@@ -898,7 +904,6 @@
             <element signature="e#19908#20746#0" />
             <element signature="e#21077#22377#0" />
             <element signature="e#22488#24118#0" />
-            <element signature="e#19529#21339#0" />
           </folding>
         </state>
       </provider>
