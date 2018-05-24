@@ -29,7 +29,7 @@ def findContourPoly(image,cnt):
     for e in range(1,20):
         epsilon = 0.005 * e * cv2.arcLength(cnt, True)
         approx = cv2.approxPolyDP(cnt, epsilon, True)
-        if len(approx) <= 8:
+        if len(approx) <= 4:
             blank_image = np.zeros(image.shape, np.uint8)
             cv2.drawContours(blank_image, [approx], -1, 255, 2)
             lineSegments = cv2.HoughLinesP(blank_image, rho=1, theta=1 * np.pi / 180, threshold=50, minLineLength=50,maxLineGap=10000)
