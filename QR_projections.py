@@ -26,7 +26,7 @@ class Template:
             self.transform = None
             self.transformed = False
         
-            
+                
         
 FLANN_INDEX_KDTREE = 0
 index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)
