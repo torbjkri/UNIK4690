@@ -446,8 +446,8 @@ def projectImageWithMouse(original, vpD, edgepoints,floor_images,ceiling_images,
     ii_w = 0
     ii_f = 0
     ii_c = 0
-    cv2.imshow('press \'d\' to continue', resultImage)
-    cv2.setMouseCallback('press \'d\' to continue',projectPoint)
+    cv2.imshow('Click anywhere in the image or press \'d\' to continue', resultImage)
+    cv2.setMouseCallback('Click anywhere in the image or press \'d\' to continue',projectPoint)
     while(1):
         if mouseClick:
             origin= [x_coord,y_coord]#[100, 300]
@@ -479,7 +479,7 @@ def projectImageWithMouse(original, vpD, edgepoints,floor_images,ceiling_images,
             h, status = cv2.findHomography(pts_src, pts_dst)
             resultImage = projectImageColor(resultImage,projection,h)
             mouseClick = False
-        cv2.imshow('press \'d\' to continue',resultImage)
+        cv2.imshow('Click anywhere in the image or press \'d\' to continue',resultImage)
         k = cv2.waitKey(10) & 0xFF
         if k == ord('d'):
             break
@@ -499,8 +499,8 @@ def projectImageWithMouseQR(original, vpD, edgepoints,QR_codes):
     f_jj = 1
     resultImage = original.copy()
     w1, h1, RGB = resultImage.shape
-    cv2.imshow('press \'d\' to continue', resultImage)
-    cv2.setMouseCallback('press \'d\' to continue',projectPoint)
+    cv2.imshow('Click anywhere in the image or press \'d\' to continue', resultImage)
+    cv2.setMouseCallback('Click anywhere in the image or press \'d\' to continue',projectPoint)
     while(1):
         if mouseClick:
             origin= [x_coord,y_coord]#[100, 300]
@@ -539,7 +539,7 @@ def projectImageWithMouseQR(original, vpD, edgepoints,QR_codes):
                 c_jj += 1
             cv2.imwrite('Figures/LaTex_images/QR_' + side + '_'+nr + '.jpg', qrcodeResult)
             mouseClick = False
-        cv2.imshow('press \'d\' to continue',resultImage)
+        cv2.imshow('Click anywhere in the image or press \'d\' to continue',resultImage)
         k = cv2.waitKey(10) & 0xFF
         if k == ord('d'):
             break
@@ -560,6 +560,12 @@ def mainFunction(imageName = 'Figures/corridor.jpg'):
     cv2.imwrite('Figures/LaTex_images/Original_image.jpg', original)
     # 2. compute filtered image (canny)
     edges = filterImage(originalGrey)
+    cv2.imshow('original image. Press [enter] to continue',original)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    cv2.imshow('edge image. Press [enter] to continue',edges)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
     # 3.  vanishing points from filtered image
     vp_all = VanishingPointP(edges)
@@ -583,17 +589,26 @@ def mainFunction(imageName = 'Figures/corridor.jpg'):
 
     # 7. Project 2D planes on top of grey source image
     edgepoints = findAllEdgePointP(edges,vpD,reverse=False)
-    project2DPlanes(originalGrey, cornerpoint_list)
+    resultImage = project2DPlanes(originalGrey, cornerpoint_list)
+    cv2.imshow('2D planes in image. Press [enter] to continue',resultImage)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
     # 8. Project images on original base image
     wall_images = ['fakelove.jpg','gta.jpg','monalisa2.jpg','banksy2.jpg']
     floor_images = ['carpet.jpg']
     ceiling_images = ['sky.jpg']
     resultImage = projectImageWithMouse(original, vpD, edgepoints, floor_images, ceiling_images, wall_images)
+    cv2.imshow('Image with projections. Press [enter] to continue',resultImage)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
     # 9. Project QR_codes on original base image and save QR code.
     QR_codes = ['QR_real.png']
     qrcodeResult, homographyQR = projectImageWithMouseQR(original, vpD, edgepoints, QR_codes)
+    cv2.imshow('Image with QRcode projections. Press [enter] to continue',resultImage)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
     if homographyQR is not None:
         return resultImage, homographyQR
@@ -607,6 +622,6 @@ def main():
 
     for name in imageList:
         image_result, h = mainFunction('Figures/'+name+'.jpg')
-    cv2.destroyAllWindows()
+        cv2.destroyAllWindows()
 
 if __name__ == "__main__": main()

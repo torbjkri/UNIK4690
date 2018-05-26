@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f8a4f300-c7e6-451e-adc9-5f649760a4ba" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallFloorCeiling.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallFloorCeiling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ARwithoutProjectionTargets.py" beforeDir="false" afterPath="$PROJECT_DIR$/ARwithoutProjectionTargets.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="wallFloorCeiling.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wallFloorCeiling.py">
+      <file leaf-file-name="ARwithoutProjectionTargets.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ARwithoutProjectionTargets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-362">
-              <caret line="467" column="29" lean-forward="true" selection-start-line="467" selection-start-column="29" selection-end-line="467" selection-end-column="29" />
+            <state relative-caret-position="1986">
+              <caret line="574" column="23" selection-start-line="574" selection-start-column="23" selection-end-line="574" selection-end-column="23" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -104,6 +104,7 @@
         <option value="$PROJECT_DIR$/ProjectionFromFloorCeiling.py" />
         <option value="$PROJECT_DIR$/find_lines_backup.py" />
         <option value="$PROJECT_DIR$/wallFloorCeiling.py" />
+        <option value="$PROJECT_DIR$/ARwithoutProjectionTargets.py" />
       </list>
     </option>
   </component>
@@ -252,7 +253,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wallFloorCeiling.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ARwithoutProjectionTargets.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -410,7 +411,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527181207915</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="FINAL">
+      <created>1527325575307</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1527325575307</updated>
+    </task>
+    <task id="LOCAL-00020" summary="FINAL">
+      <created>1527325794325</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1527325794325</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -513,7 +528,8 @@
     <MESSAGE value="find_lines" />
     <MESSAGE value="homography working" />
     <MESSAGE value="QR_code included" />
-    <option name="LAST_COMMIT_MESSAGE" value="QR_code included" />
+    <MESSAGE value="FINAL" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINAL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -579,22 +595,22 @@
           <option name="timeStamp" value="224" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/wallFloorCeiling.py</url>
+          <url>file://$PROJECT_DIR$/ARwithoutProjectionTargets.py</url>
           <line>43</line>
           <option name="timeStamp" value="250" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/wallFloorCeiling.py</url>
+          <url>file://$PROJECT_DIR$/ARwithoutProjectionTargets.py</url>
           <line>40</line>
           <option name="timeStamp" value="255" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/wallFloorCeiling.py</url>
+          <url>file://$PROJECT_DIR$/ARwithoutProjectionTargets.py</url>
           <line>524</line>
           <option name="timeStamp" value="282" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/wallFloorCeiling.py</url>
+          <url>file://$PROJECT_DIR$/ARwithoutProjectionTargets.py</url>
           <line>598</line>
           <option name="timeStamp" value="284" />
         </line-breakpoint>
@@ -756,10 +772,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wallFloorCeiling.py">
+    <entry file="file://$PROJECT_DIR$/ARwithoutProjectionTargets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-362">
-          <caret line="467" column="29" lean-forward="true" selection-start-line="467" selection-start-column="29" selection-end-line="467" selection-end-column="29" />
+        <state relative-caret-position="1986">
+          <caret line="574" column="23" selection-start-line="574" selection-start-column="23" selection-end-line="574" selection-end-column="23" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
