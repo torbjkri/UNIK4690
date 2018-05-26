@@ -446,8 +446,8 @@ def projectImageWithMouse(original, vpD, edgepoints,floor_images,ceiling_images,
     ii_w = 0
     ii_f = 0
     ii_c = 0
-    cv2.imshow('result', resultImage)
-    cv2.setMouseCallback('result',projectPoint)
+    cv2.imshow('press \'d\' to continue', resultImage)
+    cv2.setMouseCallback('press \'d\' to continue',projectPoint)
     while(1):
         if mouseClick:
             origin= [x_coord,y_coord]#[100, 300]
@@ -479,7 +479,7 @@ def projectImageWithMouse(original, vpD, edgepoints,floor_images,ceiling_images,
             h, status = cv2.findHomography(pts_src, pts_dst)
             resultImage = projectImageColor(resultImage,projection,h)
             mouseClick = False
-        cv2.imshow('result',resultImage)
+        cv2.imshow('press \'d\' to continue',resultImage)
         k = cv2.waitKey(10) & 0xFF
         if k == ord('d'):
             break
@@ -499,8 +499,8 @@ def projectImageWithMouseQR(original, vpD, edgepoints,QR_codes):
     f_jj = 1
     resultImage = original.copy()
     w1, h1, RGB = resultImage.shape
-    cv2.imshow('result', resultImage)
-    cv2.setMouseCallback('result',projectPoint)
+    cv2.imshow('press \'d\' to continue', resultImage)
+    cv2.setMouseCallback('press \'d\' to continue',projectPoint)
     while(1):
         if mouseClick:
             origin= [x_coord,y_coord]#[100, 300]
@@ -539,7 +539,7 @@ def projectImageWithMouseQR(original, vpD, edgepoints,QR_codes):
                 c_jj += 1
             cv2.imwrite('Figures/LaTex_images/QR_' + side + '_'+nr + '.jpg', qrcodeResult)
             mouseClick = False
-        cv2.imshow('result',resultImage)
+        cv2.imshow('press \'d\' to continue',resultImage)
         k = cv2.waitKey(10) & 0xFF
         if k == ord('d'):
             break
@@ -551,13 +551,13 @@ def projectImageWithMouseQR(original, vpD, edgepoints,QR_codes):
             f_jj = 1
     cv2.imwrite('Figures/LaTex_images/Projected_QR_codes.jpg', resultImage)
     cv2.destroyAllWindows()
-    return resultImage,h
+    return qrcodeResult,h
 
 def mainFunction(imageName = 'Figures/corridor.jpg'):
     # 1. Read image and convert to grayscale
     original = cv2.imread(imageName)
     originalGrey = cv2.cvtColor(original.copy(), cv2.COLOR_BGR2GRAY)
-
+    cv2.imwrite('Figures/LaTex_images/Original_image.jpg', original)
     # 2. compute filtered image (canny)
     edges = filterImage(originalGrey)
 
@@ -573,7 +573,7 @@ def mainFunction(imageName = 'Figures/corridor.jpg'):
         return originalGrey
 
     # 4. Find edge points
-    edgepoints = findAllEdgePointP(edges,vpD,reverse=False)
+    edgepoints = findAllEdgePointP(edges,vpD,reverse=True)
 
     # 5. Find cornerpoints of 2D planes
     cornerpoint_list = compute2DplaneCornerPoints(edgepoints,vpD)
@@ -582,6 +582,7 @@ def mainFunction(imageName = 'Figures/corridor.jpg'):
     computeEdgeImages(vpD, edges)
 
     # 7. Project 2D planes on top of grey source image
+    edgepoints = findAllEdgePointP(edges,vpD,reverse=False)
     project2DPlanes(originalGrey, cornerpoint_list)
 
     # 8. Project images on original base image
@@ -590,21 +591,18 @@ def mainFunction(imageName = 'Figures/corridor.jpg'):
     ceiling_images = ['sky.jpg']
     resultImage = projectImageWithMouse(original, vpD, edgepoints, floor_images, ceiling_images, wall_images)
 
-    # 9. Project QR_codes on original base image and save QR code
+    # 9. Project QR_codes on original base image and save QR code.
     QR_codes = ['QR_real.png']
-    resultImage, homographyQR = projectImageWithMouseQR(original, vpD, edgepoints, QR_codes)
+    qrcodeResult, homographyQR = projectImageWithMouseQR(original, vpD, edgepoints, QR_codes)
 
-    return resultImage, homographyQR
+    if homographyQR is not None:
+        return resultImage, homographyQR
+    else:
+        return resultImage
 
 def main():
     imageList = [
         'KjellerHallway_with_QR'
-        #'hallway',
-        #'hallway2',
-        #'hallway3',
-        #'corridor',
-        #'corridor1',
-        #'corridor4',
     ]
 
     for name in imageList:
